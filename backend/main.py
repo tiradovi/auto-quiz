@@ -1,8 +1,9 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-from quiz_generator.pdf_parser import extract_text_from_pdf
-from quiz_generator.docx_parser import extract_text_from_docx
-from quiz_generator.text_to_quiz import generate_quiz_from_text
+
+from backend.quiz_generator.pdf_parser import extract_text_from_pdf
+from backend.quiz_generator.docx_parser import extract_text_from_docx
+from backend.quiz_generator.text_to_quiz import generate_quiz_from_text
 
 app = FastAPI()
 

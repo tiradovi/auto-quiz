@@ -12,9 +12,10 @@ source venv/bin/activate
 
 ## 2. Backend 설치 및 실행
 pip install -r backend/requirements.txt
+python.exe -m pip install --upgrade pip
 uvicorn backend.main:app --reload
 
-## 3. Frontend 설치 및 실행
+## 3. 새로운 로컬 터미널 Frontend 설치 및 실행
 cd frontend
 npm install
 npm start
