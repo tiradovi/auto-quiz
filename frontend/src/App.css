@@ -1,0 +1,189 @@
+/* 전체 배경 + 폰트 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+  background: radial-gradient(circle at top, #2b2f77 0, #101322 45%, #05060b 100%);
+  color: #f5f5f5;
+}
+
+/* 가운데 카드 배치 */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app-card {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(12, 16, 34, 0.96);
+  border-radius: 16px;
+  padding: 32px 32px 28px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* 헤더 */
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.03em;
+}
+
+.app-subtitle {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #aeb4d1;
+}
+
+/* 업로드 폼 */
+.upload-form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 파일 업로드 영역 */
+.file-input-label {
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  padding: 14px 16px;
+  background: rgba(21, 26, 54, 0.85);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease,
+    transform 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.file-input-label:hover {
+  border-color: #7b8cff;
+  background: rgba(24, 32, 72, 0.9);
+  transform: translateY(-1px);
+}
+
+.file-input-label input[type="file"] {
+  display: none;
+}
+
+.file-input-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c7ceff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.file-input-filename {
+  font-size: 14px;
+  color: #e0e3ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 버튼 */
+.primary-button {
+  align-self: flex-end;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #5b7bff, #8b5bff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(91, 123, 255, 0.35);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.1s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(91, 123, 255, 0.45);
+}
+
+.primary-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(91, 123, 255, 0.35);
+}
+
+.primary-button:disabled {
+  opacity: 0.7;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* 문제 리스트 섹션 */
+.questions-section {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(123, 140, 255, 0.16);
+  color: #c7ceff;
+  border: 1px solid rgba(123, 140, 255, 0.5);
+}
+
+.empty-text {
+  margin: 0;
+  font-size: 14px;
+  color: #9aa1c4;
+}
+
+/* 문제 아이템 */
+.question-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.question-item {
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(24, 30, 63, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* 모바일 대응 */
+@media (max-width: 600px) {
+  .app-card {
+    padding: 20px 16px 18px;
+  }
+
+  .app-header h1 {
+    font-size: 22px;
+  }
+}
