@@ -91,35 +91,69 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.question-count-control {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(129, 140, 248, 0.8); /* 보라빛 테두리 */
+  background: rgba(15, 23, 42, 0.9);          /* 어두운 네이비 */
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
+}
 
-/* 버튼 */
-.primary-button {
-  align-self: flex-end;
-  padding: 10px 18px;
+.counter-button {
+  width: 26px;
+  height: 26px;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, #5b7bff, #8b5bff);
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(91, 123, 255, 0.35);
+}
+
+.counter-button:hover:not(:disabled) {
+  background: rgba(129, 140, 248, 0.18);
+}
+
+.counter-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.counter-value {
+  min-width: 26px;
+  text-align: center;
+  font-weight: 600;
+  color: #e5e7eb;
+  font-size: 15px;
+}
+/* 버튼 */
+.primary-button {
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.45);
   transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.1s ease;
 }
 
-.primary-button:hover:not(:disabled) {
+.primary-button:hover:enabled {
   transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(91, 123, 255, 0.45);
-}
-
-.primary-button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 8px 18px rgba(91, 123, 255, 0.35);
+  box-shadow: 0 14px 30px rgba(79, 70, 229, 0.6);
 }
 
 .primary-button:disabled {
-  opacity: 0.7;
-  cursor: default;
+  opacity: 0.6;
+  cursor: wait;
   box-shadow: none;
 }
 
@@ -158,6 +192,44 @@ body {
   color: #9aa1c4;
 }
 
+.empty-dropzone {
+  border: 2px dashed rgba(148, 163, 184, 0.8);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.empty-dropzone.dragover {
+  border-color: #6366f1;
+  background: rgba(37, 99, 235, 0.12);
+}
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.secondary-button {
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(129, 140, 248, 0.9);
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.secondary-button:hover {
+  background: rgba(129, 140, 248, 0.12);
+}
+
+.secondary-button:active {
+  background: rgba(129, 140, 248, 0.2);
+}
 /* 문제 아이템 */
 .question-list {
   margin: 0;
