@@ -1,4 +1,6 @@
-/* 전체 배경 + 폰트 */
+/* ----------------------
+   기본 설정 / 배경
+----------------------- */
 * {
   box-sizing: border-box;
 }
@@ -11,29 +13,34 @@ body {
   color: #f5f5f5;
 }
 
-/* 가운데 카드 배치 */
+/* 화면 가운데 카드 배치 */
 .app-root {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 40px;
 }
 
+/* ----------------------
+   메인 카드
+----------------------- */
 .app-card {
   width: 100%;
-  max-width: 720px;
-  background: rgba(12, 16, 34, 0.96);
-  border-radius: 16px;
-  padding: 32px 32px 28px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 960px;            /* 카드 가로 크기 */
+  padding: 32px 40px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.96);
+  box-shadow: 0 25px 80px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
-/* 헤더 */
+/* ----------------------
+   헤더
+----------------------- */
 .app-header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 32px;
   letter-spacing: 0.03em;
 }
 
@@ -44,9 +51,12 @@ body {
   color: #aeb4d1;
 }
 
-/* 업로드 폼 */
+/* ----------------------
+   업로드 폼
+----------------------- */
 .upload-form {
   margin-top: 24px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -91,13 +101,25 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ----------------------
+   상단 버튼 / 개수 선택
+----------------------- */
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* 문제 개수 선택 컨트롤 */
 .question-count-control {
   display: inline-flex;
   align-items: center;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(129, 140, 248, 0.8); /* 보라빛 테두리 */
-  background: rgba(15, 23, 42, 0.9);          /* 어두운 네이비 */
+  border: 1px solid rgba(129, 140, 248, 0.8);
+  background: rgba(15, 23, 42, 0.9);
   box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
 }
 
@@ -132,7 +154,8 @@ body {
   color: #e5e7eb;
   font-size: 15px;
 }
-/* 버튼 */
+
+/* 메인(문제 생성하기) 버튼 */
 .primary-button {
   padding: 11px 22px;
   border-radius: 999px;
@@ -157,11 +180,33 @@ body {
   box-shadow: none;
 }
 
-/* 문제 리스트 섹션 */
+/* 초기화 버튼 (아웃라인) */
+.secondary-button {
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(129, 140, 248, 0.9);
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.secondary-button:hover {
+  background: rgba(129, 140, 248, 0.12);
+}
+
+.secondary-button:active {
+  background: rgba(129, 140, 248, 0.2);
+}
+
 .questions-section {
-  margin-top: 28px;
+  margin-top: 24px;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  max-height: 520px;
+  overflow-y: auto;
 }
 
 .section-header {
@@ -186,6 +231,7 @@ body {
   border: 1px solid rgba(123, 140, 255, 0.5);
 }
 
+/* 빈 상태 드롭존 */
 .empty-text {
   margin: 0;
   font-size: 14px;
@@ -205,57 +251,94 @@ body {
   border-color: #6366f1;
   background: rgba(37, 99, 235, 0.12);
 }
-.button-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 16px;
-}
-.secondary-button {
-  padding: 11px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(129, 140, 248, 0.9);
-  background: transparent;
-  color: #e5e7eb;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
-}
 
-.secondary-button:hover {
-  background: rgba(129, 140, 248, 0.12);
-}
-
-.secondary-button:active {
-  background: rgba(129, 140, 248, 0.2);
-}
-/* 문제 아이템 */
+/* ----------------------
+   문제 / 보기 스타일
+----------------------- */
 .question-list {
-  margin: 0;
-  padding-left: 20px;
+  margin: 12px 0 0;
+  padding-left: 18px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-height: 280px;
-  overflow-y: auto;
+  gap: 12px;
 }
 
 .question-item {
-  font-size: 14px;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 10px 12px 12px;
+  border-radius: 10px;
   background: rgba(24, 30, 63, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 14px;
 }
 
-/* 모바일 대응 */
-@media (max-width: 600px) {
-  .app-card {
-    padding: 20px 16px 18px;
-  }
+/* 문제 텍스트 */
+.question-text {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e5e7eb;
+}
 
-  .app-header h1 {
-    font-size: 22px;
-  }
+.question-number {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* 보기 버튼들 */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.option-button {
+  text-align: left;
+  padding: 9px 11px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease,
+    transform 0.06s ease;
+}
+
+.option-button:hover:not(:disabled) {
+  background: rgba(51, 65, 85, 0.9);
+  border-color: rgba(129, 140, 248, 0.9);
+  transform: translateY(-1px);
+}
+
+.option-button:disabled {
+  opacity: 0.95;
+  cursor: default;
+}
+
+.option-correct {
+  background: rgba(22, 163, 74, 0.2);
+  border-color: rgba(22, 163, 74, 0.9);
+}
+
+.option-incorrect {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.9);
+}
+
+.option-correct-outline {
+  border-color: rgba(22, 163, 74, 0.9);
+}
+
+.answer-feedback {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.answer-feedback.correct {
+  color: #4ade80;
+}
+
+.answer-feedback.incorrect {
+  color: #f97373;
 }
