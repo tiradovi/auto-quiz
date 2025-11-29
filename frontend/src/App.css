@@ -61,7 +61,46 @@ body {
   flex-direction: column;
   gap: 16px;
 }
+/* ----------------------
+   문제 유형 토글 버튼
+----------------------- */
+.quiz-type-toggle {
+    display: inline-flex;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 999px;
+    border: 1px solid rgba(129, 140, 248, 0.8);
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
+}
 
+.quiz-type-button {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: none;
+    width: 100%;
+    background: transparent;
+    color: #e5e7eb;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.quiz-type-button:hover {
+    background: rgba(129, 140, 248, 0.18);
+}
+
+/* 선택된(active) 상태 */
+.quiz-type-button.active {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.45);
+}
+
+.quiz-type-button.active:hover {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+}
 /* 파일 업로드 영역 */
 .file-input-label {
   border-radius: 12px;
@@ -178,6 +217,48 @@ body {
   opacity: 0.6;
   cursor: wait;
   box-shadow: none;
+}
+.short-answer-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 2px solid #d0d0d0;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s ease;
+    margin-top: 8px;
+    background: #fafafa;
+}
+
+.short-answer-input:focus {
+    border-color: #4a7dff;
+    background: #ffffff;
+    box-shadow: 0 0 6px rgba(74, 125, 255, 0.3);
+}
+
+.short-answer-input.correct {
+    border-color: #3cc36b;
+    background: #eafff2;
+}
+
+.short-answer-input.incorrect {
+    border-color: #ff4f4f;
+    background: #ffeaea;
+}
+
+.short-answer-feedback {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.short-answer-feedback.correct {
+    color: #14a04a;
+    font-weight: 600;
+}
+
+.short-answer-feedback.incorrect {
+    color: #d03131;
+    font-weight: 600;
 }
 
 /* 초기화 버튼 (아웃라인) */
